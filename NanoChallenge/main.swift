@@ -1,12 +1,5 @@
-//
-//  main.swift
-//  Nano Challenge
-//
-//  Created by Nicolas Godoy on 16/03/21.
-//
 
 import Foundation
-
 
 // User
 class User {
@@ -64,11 +57,8 @@ func createData() {
             let createNewUser = User(id: count, userName: newUserName, email: newEmail, password: newPassword)
             userList.append(createNewUser)
         }
-        
     }
-    
 }
-
 
 // Read all users in database
 func readData() {
@@ -84,9 +74,7 @@ func readData() {
             print ("User created at: ", user.created_at)
         }
     }
-    
 }
-
 
 // Update a user data
 func updateData() {
@@ -111,13 +99,11 @@ func updateData() {
                     print("Password updated sucessfuly!")
                 default:
                     print(myOption)
-                    
                 }
             }
         }
     }
 }
-
 
 // Delete user data.
 func deleteData () {
@@ -130,14 +116,10 @@ func deleteData () {
             if (id.elementsEqual(deleteUser)){
                 userList.remove(at: index)
             }
-            
             index += 1
         }
-        
     }
-    
 }
-
 
 // Update username property.
 func updateUsername () -> String {
@@ -145,10 +127,8 @@ func updateUsername () -> String {
     guard let newUserName = readLine() else {
         return "Error"
     }
-    
     return newUserName
 }
-
 
 // Update email property.
 func updateEmail () -> String {
@@ -156,10 +136,8 @@ func updateEmail () -> String {
     guard let newEmail = readLine() else {
         return "Error"
     }
-    
     return newEmail
 }
-
 
 // Update password property.
 func updatePassword () -> String {
@@ -181,11 +159,8 @@ func updatePassword () -> String {
             pwdMatch = true
             return newPassword
         }
-    
     }
-
 }
-
 
 // Show the update option list to the user.
 func showUpdateOptions() -> String {
@@ -197,10 +172,8 @@ func showUpdateOptions() -> String {
     guard let updateOption = readLine() else {
         return "Option not available"
     }
-    
     return updateOption
 }
-
 
 // Function to generate menu.
 func generateMenu() {
@@ -233,7 +206,3 @@ func generateMenu() {
 }
 
 generateMenu()
-
-
-
-
