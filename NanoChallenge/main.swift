@@ -28,22 +28,22 @@ var count = 0
 
 // Create a new user.
 func createData() {
-    print("Enter the name of the new username: ")
+    print("\nEnter the name of the new username: ")
     guard let newUserName = readLine() else {
         return
     }
-    print("Enter email: ")
+    print("\nEnter email: ")
     guard let newEmail = readLine() else {
         return
     }
     
     var pwdMatch = false
     while(!pwdMatch) {
-        print("Enter Password: ")
+        print("\nEnter Password: ")
         guard let newPassword = readLine() else {
             return
         }
-        print("Confirm your Password: ")
+        print("\nConfirm your Password: ")
         guard let confirmPassword = readLine() else {
             return
         }
@@ -64,21 +64,21 @@ func createData() {
 func readData() {
     
     if (userList.isEmpty) {
-        print("User list are empty.")
+        print("\nUser list are empty.")
     } else {
-        print("All users data stored.")
+        print("\nAll users data stored:")
         for user in userList {
-            print ("ID: ", user.id)
-            print ("Username: ", user.userName)
-            print ("Email: ", user.email)
-            print ("User created at: ", user.created_at)
+            print ("ID: \(user.id)")
+            print ("Username: \(user.userName)")
+            print ("Email: \(user.email)")
+            print ("User created at: \(user.created_at)\n")
         }
     }
 }
 
 // Update a user data
 func updateData() {
-    print ("Inform the id of the user to update: ")
+    print ("\nInform the id of the user to update: ")
     if let updateUser = readLine() {
         for user in userList {
             let id = String(user.id)
@@ -88,15 +88,15 @@ func updateData() {
                 case "1":
                     let newName = updateUsername()
                     user.userName = newName
-                    print("Name updated sucessfuly!")
+                    print("\nName updated sucessfuly!")
                 case "2":
                     let newEmail = updateEmail()
                     user.email = newEmail
-                    print("Email updated sucessfuly!")
+                    print("\nEmail updated sucessfuly!")
                 case "3":
                     let newPwd = updatePassword()
                     user.password = newPwd
-                    print("Password updated sucessfuly!")
+                    print("\nPassword updated sucessfuly!")
                 default:
                     print(myOption)
                 }
@@ -109,7 +109,7 @@ func updateData() {
 func deleteData () {
     var index = 0
     
-    print ("Inform the id of the user to delete: ")
+    print ("\nInform the id of the user to delete: ")
     if let deleteUser = readLine() {
         for user in userList {
             let id = String(user.id)
@@ -123,7 +123,7 @@ func deleteData () {
 
 // Update username property.
 func updateUsername () -> String {
-    print("Enter the new name: ")
+    print("\nEnter the new name: ")
     guard let newUserName = readLine() else {
         return "Error"
     }
@@ -132,7 +132,7 @@ func updateUsername () -> String {
 
 // Update email property.
 func updateEmail () -> String {
-    print("Enter the new email: ")
+    print("\nEnter the new email: ")
     guard let newEmail = readLine() else {
         return "Error"
     }
@@ -144,17 +144,17 @@ func updatePassword () -> String {
     
     var pwdMatch = false
     while(!pwdMatch) {
-        print("Enter your new Password: ")
+        print("\nEnter your new Password: ")
         guard let newPassword = readLine() else {
             return "Error"
         }
-        print("Confirm your Password: ")
+        print("\nConfirm your Password: ")
         guard let confirmPassword = readLine() else {
             return " Error"
         }
         
         if(!newPassword.elementsEqual(confirmPassword)) {
-            print("Confirmation password do not match! Please try again...")
+            print("\nConfirmation password do not match! Please try again...")
         } else {
             pwdMatch = true
             return newPassword
@@ -164,13 +164,13 @@ func updatePassword () -> String {
 
 // Show the update option list to the user.
 func showUpdateOptions() -> String {
-    print("What do you want to update?")
+    print("\nWhat do you want to update?")
     print("[1] The username")
     print("[2] The email")
     print("[3] Update my password")
     
     guard let updateOption = readLine() else {
-        return "Option not available"
+        return "\nOption not available"
     }
     return updateOption
 }
