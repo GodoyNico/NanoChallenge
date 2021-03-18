@@ -7,6 +7,20 @@ var count = 10
 
 
 /**
+    Function to clear terminal screen.
+ */
+func clearScreen() {
+    print("Press Enter to continue...)
+    if let pressEnter = readLine() {
+        for _ in 1...100 {
+            print(" ")
+        }
+    }
+
+}
+
+
+/**
     Function to create a new user.
  */
 func createUser() {
@@ -43,6 +57,7 @@ func createUser() {
             
             let createNewUser = User(id: count, userName: newUserName, email: newEmail, password: newPassword, created_at: dateFormatter.string(from: date))
             userList.append(createNewUser)
+            print("New user registered!")
         }
     }
 }
@@ -141,7 +156,7 @@ func updatePassword () -> String {
         }
         print("\nConfirm your Password: ")
         guard let confirmPassword = readLine() else {
-            return " Error"
+            return "Error"
         }
         
         if(!newPassword.elementsEqual(confirmPassword)) {
@@ -168,6 +183,7 @@ func deleteData () {
             if (id.elementsEqual(deleteUser)){
                 found = true
                 userList.remove(at: index)
+                print("User deleted successfully!")
             }
             index += 1
         }
