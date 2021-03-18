@@ -33,7 +33,7 @@ func generateMenu() {
                 print()
                 exit(0)
             default:
-                print("This option do not exist")
+                print("\nThis option do not exist\n")
             }
         }
     }

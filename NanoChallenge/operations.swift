@@ -8,10 +8,8 @@ var count = 10
 
 // Function to clear terminal screen.
 func clearScreen() {
-    print("\nPress Enter to continue...")
-    if readLine() != nil {
     print("Press Enter to continue...")
-        if readLine() != nil {
+    if readLine() != nil {
         for _ in 1...100 {
             print(" ")
         }
@@ -191,6 +189,7 @@ func searchUser () {
     
     if (userList.isEmpty) {
         print("User list is empty...")
+        
     } else {
         var found = false
         print("\nInform a name to search: ")
@@ -235,5 +234,4 @@ func fillData(){
     userList.append(user8)
     userList.append(user9)
     userList.append(user10)
-    }
 }
