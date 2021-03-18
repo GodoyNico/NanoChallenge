@@ -3,10 +3,13 @@ import Foundation
 
 // List of User to represents an mini "Database".
 var userList : [User] = []
-var count = 0
+var count = 10
 
-// Create a new user.
-func createData() {
+
+/**
+    Function to create a new user.
+ */
+func createUser() {
     print("\nEnter the name of the new username: ")
     guard let newUserName = readLine() else {
         return
@@ -33,13 +36,21 @@ func createData() {
             pwdMatch = true
             // Generate new user
             count += 1
-            let createNewUser = User(id: count, userName: newUserName, email: newEmail, password: newPassword)
+            
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
+            
+            let createNewUser = User(id: count, userName: newUserName, email: newEmail, password: newPassword, created_at: dateFormatter.string(from: date))
             userList.append(createNewUser)
         }
     }
 }
 
-// Read all users in database
+
+/**
+    Function to read all the data from database. Show all users inside the list.
+ */
 func readData() {
     
     if (userList.isEmpty) {
@@ -55,6 +66,7 @@ func readData() {
     }
 }
 
+
 // Show the update option list to the user.
 func showUpdateOptions() -> String {
     print("\nWhat do you want to update?")
@@ -68,7 +80,10 @@ func showUpdateOptions() -> String {
     return updateOption
 }
 
-// Update a user data
+
+/**
+    Function to update some user data.
+ */
 func updateData() {
     print ("\nInform the id of the user to update: ")
     if let updateUser = readLine() {
@@ -138,18 +153,85 @@ func updatePassword () -> String {
     }
 }
 
-// Delete user data.
+
+/**
+    Function to delete some user data.
+ */
 func deleteData () {
     var index = 0
+    var found = false
     
     print ("\nInform the id of the user to delete: ")
     if let deleteUser = readLine() {
         for user in userList {
             let id = String(user.id)
             if (id.elementsEqual(deleteUser)){
+                found = true
                 userList.remove(at: index)
             }
             index += 1
         }
     }
+    
+    if(!found) {
+        print("Cannot found this user id...")
+    }
+}
+
+
+/**
+    Function to search a user.
+ */
+func searchUser () {
+    
+    if (userList.isEmpty) {
+        print("User list is empty...")
+        
+    } else {
+        var found = false
+        print("Inform a name to search: ")
+        if let name = readLine() {
+            for user in userList {
+                if user.userName.contains(name) {
+                    found = true
+                    print ("\nID: \(user.id)")
+                    print ("Username: \(user.userName)")
+                    print ("Email: \(user.email)\n")
+                }
+            }
+        }
+        
+        if (!found) {
+            print("No results found...")
+        }
+    }
+}
+
+
+/**
+    Fill user list with some fake data users.
+ */
+func fillData(){
+    let user1 = User(id: 1, userName: "John Doe", email: "johndoe@gmail.com", password: "john123", created_at: "30/02/1984 13:44")
+    let user2 = User(id: 2, userName: "Mark Clark", email: "markclark@gmail.com", password: "mark0", created_at: "15/06/1993 11:37")
+    let user3 = User(id: 3, userName: "Lara Wess", email: "larawess@gmail.com", password: "lara123", created_at: "14/02/1999 12:19")
+    let user4 = User(id: 4, userName: "Rodrigo Crown", email: "rodrigoc@gmail.com", password: "rodrigocrown1", created_at: "08/07/1970 18:25")
+    let user5 = User(id: 5, userName: "Samantha Doe", email: "samantha@gmail.com", password: "sam891", created_at: "03/10/1998 13:44")
+    let user6 = User(id: 6, userName: "Janeth Rosa", email: "janeth@gmail.com", password: "janeth123", created_at: "28/04/2005 17:50")
+    let user7 = User(id: 7, userName: "Rodrigo Santos", email: "santos@gmail.com", password: "santos999", created_at: "25/02/2010 13:40")
+    let user8 = User(id: 8, userName: "Angela River", email: "angela@gmail.com", password: "angela222", created_at: "14/12/1992 19:54")
+    let user9 = User(id: 9, userName: "Keegan West", email: "keegan@gmail.com", password: "keegan777", created_at: "21/03/1988 23:44")
+    let user10 = User(id: 10, userName: "Arthur King", email: "arthur@gmail.com", password: "john123", created_at: "30/02/1984 13:44")
+    
+    userList.append(user1)
+    userList.append(user2)
+    userList.append(user3)
+    userList.append(user4)
+    userList.append(user5)
+    userList.append(user6)
+    userList.append(user7)
+    userList.append(user8)
+    userList.append(user9)
+    userList.append(user10)
+
 }

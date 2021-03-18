@@ -9,15 +9,11 @@ class User {
     var password: String
     let created_at : String
     
-    init(id: Int, userName: String, email: String, password: String) {
+    init(id: Int, userName: String, email: String, password: String, created_at: String) {
         self.id = id
         self.userName = userName
         self.email = email
         self.password = password
-        
-        let date = Date()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm"
-        self.created_at = dateFormatter.string(from: date)
+        self.created_at = created_at
     }
 }
