@@ -10,6 +10,8 @@ var count = 10
 func clearScreen() {
     print("\nPress Enter to continue...")
     if readLine() != nil {
+    print("Press Enter to continue...")
+        if readLine() != nil {
         for _ in 1...100 {
             print(" ")
         }
@@ -233,4 +235,5 @@ func fillData(){
     userList.append(user8)
     userList.append(user9)
     userList.append(user10)
+    }
 }
