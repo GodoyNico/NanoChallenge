@@ -10,7 +10,7 @@ var count = 10
     Function to clear terminal screen.
  */
 func clearScreen() {
-    print("Press Enter to continue...)
+    print("Press Enter to continue...")
     if let pressEnter = readLine() {
         for _ in 1...100 {
             print(" ")
@@ -156,7 +156,7 @@ func updatePassword () -> String {
         }
         print("\nConfirm your Password: ")
         guard let confirmPassword = readLine() else {
-            return "Error"
+            return " Error"
         }
         
         if(!newPassword.elementsEqual(confirmPassword)) {
