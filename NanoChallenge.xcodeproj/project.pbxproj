@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D4A4BAD2603C1F000742AAB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4A4BAA2603C1F000742AAB /* main.swift */; };
-		5D4A4BAE2603C1F000742AAB /* user.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4A4BAB2603C1F000742AAB /* user.swift */; };
-		5D4A4BAF2603C1F000742AAB /* operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D4A4BAC2603C1F000742AAB /* operations.swift */; };
+		5DA6DF53260139060041FD57 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA6DF52260139060041FD57 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +23,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5D4A4BAA2603C1F000742AAB /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = main.swift; path = ../../../Desktop/Teste/Teste/main.swift; sourceTree = "<group>"; };
-		5D4A4BAB2603C1F000742AAB /* user.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = user.swift; path = ../../../Desktop/Teste/Teste/user.swift; sourceTree = "<group>"; };
-		5D4A4BAC2603C1F000742AAB /* operations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = operations.swift; path = ../../../Desktop/Teste/Teste/operations.swift; sourceTree = "<group>"; };
 		5DA6DF4F260139060041FD57 /* NanoChallenge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NanoChallenge; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DA6DF52260139060041FD57 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,9 +57,7 @@
 		5DA6DF51260139060041FD57 /* NanoChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				5D4A4BAA2603C1F000742AAB /* main.swift */,
-				5D4A4BAC2603C1F000742AAB /* operations.swift */,
-				5D4A4BAB2603C1F000742AAB /* user.swift */,
+				5DA6DF52260139060041FD57 /* main.swift */,
 			);
 			path = NanoChallenge;
 			sourceTree = "<group>";
@@ -125,9 +119,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D4A4BAD2603C1F000742AAB /* main.swift in Sources */,
-				5D4A4BAE2603C1F000742AAB /* user.swift in Sources */,
-				5D4A4BAF2603C1F000742AAB /* operations.swift in Sources */,
+				5DA6DF53260139060041FD57 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
