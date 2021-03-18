@@ -6,23 +6,18 @@ var userList : [User] = []
 var count = 10
 
 
-/**
-    Function to clear terminal screen.
- */
+// Function to clear terminal screen.
 func clearScreen() {
-    print("Press Enter to continue...)
-    if let pressEnter = readLine() {
+    print("\nPress Enter to continue...")
+    if readLine() != nil {
         for _ in 1...100 {
             print(" ")
         }
     }
-
 }
 
 
-/**
-    Function to create a new user.
- */
+// Function to create a new user.
 func createUser() {
     print("\nEnter the name of the new username: ")
     guard let newUserName = readLine() else {
@@ -57,15 +52,13 @@ func createUser() {
             
             let createNewUser = User(id: count, userName: newUserName, email: newEmail, password: newPassword, created_at: dateFormatter.string(from: date))
             userList.append(createNewUser)
-            print("New user registered!")
+            print("\nNew user registered!")
         }
     }
 }
 
 
-/**
-    Function to read all the data from database. Show all users inside the list.
- */
+// Function to read all the data from database. Show all users inside the list.
 func readData() {
     
     if (userList.isEmpty) {
@@ -96,9 +89,7 @@ func showUpdateOptions() -> String {
 }
 
 
-/**
-    Function to update some user data.
- */
+// Function to update some user data.
 func updateData() {
     print ("\nInform the id of the user to update: ")
     if let updateUser = readLine() {
@@ -169,9 +160,7 @@ func updatePassword () -> String {
 }
 
 
-/**
-    Function to delete some user data.
- */
+// Function to delete some user data.
 func deleteData () {
     var index = 0
     var found = false
@@ -183,29 +172,26 @@ func deleteData () {
             if (id.elementsEqual(deleteUser)){
                 found = true
                 userList.remove(at: index)
-                print("User deleted successfully!")
+                print("\nUser deleted successfully!")
             }
             index += 1
         }
     }
     
     if(!found) {
-        print("Cannot found this user id...")
+        print("\nCannot found this user id...")
     }
 }
 
 
-/**
-    Function to search a user.
- */
+// Function to search a user.
 func searchUser () {
     
     if (userList.isEmpty) {
         print("User list is empty...")
-        
     } else {
         var found = false
-        print("Inform a name to search: ")
+        print("\nInform a name to search: ")
         if let name = readLine() {
             for user in userList {
                 if user.userName.contains(name) {
@@ -218,15 +204,13 @@ func searchUser () {
         }
         
         if (!found) {
-            print("No results found...")
+            print("\nNo results found...")
         }
     }
 }
 
 
-/**
-    Fill user list with some fake data users.
- */
+// Fill user list with some fake data users.
 func fillData(){
     let user1 = User(id: 1, userName: "John Doe", email: "johndoe@gmail.com", password: "john123", created_at: "30/02/1984 13:44")
     let user2 = User(id: 2, userName: "Mark Clark", email: "markclark@gmail.com", password: "mark0", created_at: "15/06/1993 11:37")
@@ -249,5 +233,4 @@ func fillData(){
     userList.append(user8)
     userList.append(user9)
     userList.append(user10)
-
 }

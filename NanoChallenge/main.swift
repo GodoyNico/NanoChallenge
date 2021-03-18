@@ -30,7 +30,8 @@ func generateMenu() {
             case "5": searchUser()
                       clearScreen()
             case "6": running = false
-                      exit(0)
+                print()
+                exit(0)
             default:
                 print("This option do not exist")
             }
