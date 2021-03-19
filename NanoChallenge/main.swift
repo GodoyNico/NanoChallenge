@@ -7,7 +7,7 @@ func generateMenu() {
     
     while(running){
         print("===============================================")
-        print("CALL LIST ACADEMY 2050. SELECT A OPTION BELOW:")
+        print("CALL LIST ACADEMY 2023. SELECT A OPTION BELOW:")
         print("[1] Create new user")
         print("[2] Read Data")
         print("[3] Update user data")

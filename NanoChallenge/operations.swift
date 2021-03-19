@@ -171,8 +171,16 @@ func deleteData () {
             let id = String(user.id)
             if (id.elementsEqual(deleteUser)){
                 found = true
-                userList.remove(at: index)
-                print("\nUser deleted successfully!")
+                print("Inform password to confirm deletion: ")
+                if let pwd = readLine() {
+                    if (user.password.elementsEqual(pwd)){
+                        userList.remove(at: index)
+                        print("User deleted successfully!")
+                    } else {
+                        print("Password not correct!")
+                    }
+                }
+
             }
             index += 1
         }
@@ -213,16 +221,16 @@ func searchUser () {
 
 // Fill user list with some fake data users.
 func fillData(){
-    let user1 = User(id: 1, userName: "John Doe", email: "johndoe@gmail.com", password: "john123", created_at: "30/02/1984 13:44")
-    let user2 = User(id: 2, userName: "Mark Clark", email: "markclark@gmail.com", password: "mark0", created_at: "15/06/1993 11:37")
-    let user3 = User(id: 3, userName: "Lara Wess", email: "larawess@gmail.com", password: "lara123", created_at: "14/02/1999 12:19")
-    let user4 = User(id: 4, userName: "Rodrigo Crown", email: "rodrigoc@gmail.com", password: "rodrigocrown1", created_at: "08/07/1970 18:25")
+    let user1 = User(id: 1, userName: "John Doe", email: "johndoe@gmail.com", password: "john123", created_at: "30/02/1999 13:44")
+    let user2 = User(id: 2, userName: "Mark Clark", email: "markclark@gmail.com", password: "mark0", created_at: "15/06/2000 11:37")
+    let user3 = User(id: 3, userName: "Lara Wess", email: "larawess@gmail.com", password: "lara123", created_at: "14/02/1997 12:19")
+    let user4 = User(id: 4, userName: "Rodrigo Crown", email: "rodrigoc@gmail.com", password: "rodrigocrown1", created_at: "08/07/1990 18:25")
     let user5 = User(id: 5, userName: "Samantha Doe", email: "samantha@gmail.com", password: "sam891", created_at: "03/10/1998 13:44")
-    let user6 = User(id: 6, userName: "Janeth Rosa", email: "janeth@gmail.com", password: "janeth123", created_at: "28/04/2005 17:50")
-    let user7 = User(id: 7, userName: "Rodrigo Santos", email: "santos@gmail.com", password: "santos999", created_at: "25/02/2010 13:40")
-    let user8 = User(id: 8, userName: "Angela River", email: "angela@gmail.com", password: "angela222", created_at: "14/12/1992 19:54")
-    let user9 = User(id: 9, userName: "Keegan West", email: "keegan@gmail.com", password: "keegan777", created_at: "21/03/1988 23:44")
-    let user10 = User(id: 10, userName: "Arthur King", email: "arthur@gmail.com", password: "john123", created_at: "30/02/1984 13:44")
+    let user6 = User(id: 6, userName: "Janeth Rosa", email: "janeth@gmail.com", password: "janeth123", created_at: "28/04/1989 17:50")
+    let user7 = User(id: 7, userName: "Rodrigo Santos", email: "santos@gmail.com", password: "santos999", created_at: "25/02/2000 13:40")
+    let user8 = User(id: 8, userName: "Angela River", email: "angela@gmail.com", password: "angela222", created_at: "14/12/2001 19:54")
+    let user9 = User(id: 9, userName: "Keegan West", email: "keegan@gmail.com", password: "keegan777", created_at: "21/03/2002 23:44")
+    let user10 = User(id: 10, userName: "John Reach", email: "johnr@gmail.com", password: "johnr123", created_at: "10/02/1995 13:44")
     
     userList.append(user1)
     userList.append(user2)
